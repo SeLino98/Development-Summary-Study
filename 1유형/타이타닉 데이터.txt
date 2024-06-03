@@ -1,0 +1,9 @@
+각 열의 결측치 비율을 확인한 후 결측치 비율이 가장 높은 변수명 구하기 
+
+A = df.isna().sum() # 컬럼별로 결측치를 확인
+result = A.sort_values(ascending=False).index[0]
+print(result) #age
+
+A.argmax() # 5번째 위치에 있다는 것을 알려준다,. 
+result = A.index[A.argmax()]
+print(result)

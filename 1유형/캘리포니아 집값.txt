@@ -1,0 +1,18 @@
+결측치를 포함하는 모든행 제거,
+처음부터 순서대로 70퍼를 추출
+housing_median_age 컬럼의 사분위수 q1의 값을 구해라 
+
+from sklearn.model_selection import train_test_split
+
+# 결측치 확인
+print(df.isna().sum()) # total_bedrooms 207
+
+# 결측치를 포함하는 모든 행을 제거 
+df = df.dropna(how='any', axis = 0) 
+
+# 처음부터 순서대로 70%를 추출
+A, _ = train_test_split(df, train_size = 0.7, shuffle=False)
+
+# housing_median_age 컬럼의 사분위 수 Q1의 값 
+result = A['housing_median_age'].quantile(0.25)
+print(int(result))
