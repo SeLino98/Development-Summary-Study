@@ -1,0 +1,42 @@
+
+
+
+## 1-3. 넷플릭스 데이터
+netflix_subset 데이터셋에서 date_added가 2018년 1월이면서 country가 United Kingdom 단독 제작인 데이터의 개수를 구하여라
+
+# 4-1-3)
+
+## 1
+condition1 = df['date_added'].str.contains('2018')
+condition2 = df['date_added'].str.contains('January')
+condition3 = df['country'] == 'United Kingdom'
+df[condition1 & condition2 & condition3 ]
+
+df[condition1 & condition2 & condition3 ].shape[0]
+result = (condition1 & condition2 & condition3).sum()
+print(result)
+
+
+##2
+A = df['date_added'].astype('datetime64')
+cond1 = (A>='2018-01-01')
+cond2 = (A<='2018-01-28')
+cond3 = df['country'] == 'United Kingdom'
+result = (cond1 &cond2&cond3).sum()
+
+##3
+A = df['date_added'].astype('datetime64')
+cond1 = A.between('2018-01-01','2018-01-28')
+cond2 = df['country'] == 'United Kingdom'
+result = (cond1 & cond2).sum()
+print(result)
+
+
+5회 종량제 봉투 
+20L가격과 5L가격이 모두 0원이 아닌 데이터만 필터를 한 후
+,각 row별로 20L가격과 5L가격의 차이를 ‘차이가격’ 이라 부른다고 하자.
+시도명 별 차이가격의 평균가격을 비교할때
+그 값이 가장 큰 금액을 반올림하여 정수로 답하라.
+
+
+
