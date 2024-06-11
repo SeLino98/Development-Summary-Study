@@ -151,7 +151,99 @@ dfX3['dow_h'] = dfX3['day_of_week'].isin(high_day_of_week).astype(int)
 dfX3['month_h'] = dfX3['month'].isin(high_month).astype(int)
 
 
+#### $3
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.ensemble import RandomForestRegressor
+from xgboost import XGBRegressor
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import Ridge, Lasso
+## 다양한 모델을 만들고 성능을 출력해보자.
+# 함수를 두 개 만들 것이다.
+# 데이터 성능을 돌리는 함수
+# 데이터 모델을 사용하는 함수
+from sklearn.metrics import r2_score
+from sklearn.metrics import mean_absolute_error as mae
+from sklearn.metrics import mean_squared_error as mse
+from sklearn.metrics import mean_squared_log_error as msle
+import numpy as np
 
+# [1] 데이터 성능을 테스트 하느 모델
+def get_scores2(model,xtrain, xtest,ytrain, ytest):
+    '''
+    r2_score: 결정계수 R^2
+    mae: 평균 절대 오차.
+    mse: 평균 제곱 오차.
+    np.sqrt: 제곱근을 계산하여 RMSE를 구함.
+    '''
+    # 예측값
+    pred1 = model.predict(xtrain)
+    pred2 = model.predict(xtest)
+    # MAE MSE RMSE 등은 모델이 예측한 값과 실제 값 간의 차이를 측정하여 모델의 정확성을 평가하는 데 도움을 준다.
+    # 각 지표는 서로 다른 방식으로 오류를 계산하며, 특정 상황에서 더 적합하게 나타내게 할 수 있다.
+
+    train_R2 = r2_score(ytrain,pred1) # train 데이터에 대한 R2 점수
+    test_R2 = r2_score(ytest,pred2) # test 데이터에 대한 R2 점수
+    MAE = mae(ytest, pred2) # test데이터에 대한 평균 절대 오차
+    MSE = mse(ytest,pred2) # 평균 제곱 오차
+    RMSE = np.sqrt(MSE) # 평균 제곱근 오차
+
+    #msle와 rmsle 계산을 위한 음수 값 처리
+    pred2 = np.where(pred2 < 0, 0 , pred2) # 예측값이 음수일 경우 0으로 변환
+    MSLE = msle(ytest,pred2) # 평균 제곱 로그 오차
+    RMSLE = np.sqrt(MSLE) # 평균 제곱근 로그 오차
+
+    # 계산된 성능 지표를 소수점 4자리까지 반올림
+    data = [round(x,4) for x in [train_R2,test_R2,MAE,MSE,MSLE,RMSLE]]
+    names = 'r2_train trtest mae mse msle rmse rmsle'.split(' ')
+
+    # 성능 지표를 pandas Series로 저장
+    scores = pd.Series(data, index=names)
+    return scores
+
+
+
+# 다양한 모델에 대한 성능을 출력하는 함수 작성
+# dataFrame으로 만든다.
+def make_models(xtrain, xtest, ytrain, ytest, n=300, RL=False):
+    temp = pd.DataFrame()
+
+    model1 = LinearRegression().fit(xtrain, ytrain)
+    temp['model1'] = get_scores2(model1, xtrain, xtest, ytrain, ytest)
+
+    if not RL:
+        model2 = DecisionTreeRegressor(random_state=0).fit(xtrain, ytrain)  # overfitting 나기 쉬움
+        temp['model2'] = get_scores2(model2, xtrain, xtest, ytrain, ytest)
+
+        for d in range(3, 9):
+            model2 = DecisionTreeRegressor(max_depth=d, random_state=0).fit(xtrain, ytrain)
+            temp[f'model2_{d}'] = get_scores2(model2, xtrain, xtest, ytrain, ytest)
+
+        model3 = RandomForestRegressor(n, random_state=0).fit(xtrain, ytrain)
+        temp['model3'] = get_scores2(model3, xtrain, xtest, ytrain, ytest)
+
+        for d in range(3, 9):
+            model3 = RandomForestRegressor(n, max_depth=d, random_state=0).fit(xtrain, ytrain)
+            temp[f'model3_{d}'] = get_scores2(model3, xtrain, xtest, ytrain, ytest)
+
+    model4 = XGBRegressor(objective='reg:squarederror').fit(xtrain, ytrain)
+    temp['model4'] = get_scores2(model4, xtrain, xtest, ytrain, ytest)
+
+    if RL:
+        for a in [0.01, 0.1, 1, 2]:
+            model5 = Ridge(alpha=a).fit(xtrain, ytrain)
+            temp[f'model5_{a}'] = get_scores2(model5, xtrain, xtest, ytrain, ytest)
+
+        for a in [0.01, 0.1, 1, 2]:
+            model6 = Lasso(alpha=a).fit(xtrain, ytrain)
+            temp[f'model6_{a}'] = get_scores2(model6, xtrain, xtest, ytrain, ytest)
+
+
+    temp = temp.T
+    temp.insert(2, 'diff', (temp['r2_train'] - temp['r2_test']).abs())
+
+    return temp
 
 
 
