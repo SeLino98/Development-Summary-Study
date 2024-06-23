@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+빅분기 뽀개기
+정리
+:유형 1
+:유형 2
+:유형 3
+기출 다시 다 풀기
+못 외웠거나 필수 문법들 따로 정리
+
+
+## 유형 1 :
+[1] : df[["QESC"]]
+[2] : sort_values("COLUMNS", ascending=False) #내림차순
+[3] : df.shape 에서 shape[0] 은 행
+		shape[1]은 열을 나타낸다.
+
+[4] : 결측값을 중앙값으로 대체 fillna, median()
+
+[5] : 이상치 값 기준 = 평균 - (표준편차*1.5) , 평균 + (표준편차*1.5)
+		 = 이상치 < 평균 - IQR * 1.5, 이상치 > 평균 + IQR * 1.5
+[6] : 이상치에 해당하는 데이터 검색 :
+mean, std = A.mean(), A.std(ddof=0)
+lower = mean - (std * 1.5)
+upper = mean + (std * 1.5)
+cond = (A < lower) | (A > upper) # 시리즈인데 False True 이런식으로 저장된 값이 만들어짐
+df[cond]
+
+[7] : 결측치를 지운다 : dropna() , df.dropna(subset=['score']) !! subset=[]
+[8] : 사분위를 구한다 : Q1,Q3= df["COL"].quantile([0.25,0.75])
+[9] : set_index :
+df.head(3)
+df2 = df.set_index('year', inplace=False) # year의 열에 있는 데이터를 df2의 행의 인덱싱으로 쓸거다.
+print(df2.head(3))
+df2000 = df2.loc[2000,] # 행의 2000번이름을 가진 데이터의 모든 행을 가져와서 df2000에 저장한다.
+# df2.loc[2000,]은 인덱스 레이블이 2000인 행의 모든 ​​열을 선택합니다.
+
+( 4 회 )
+[10] : df[].str.contains('STRING')
+[11] : date_type 변경
+A = df['date_added'].astype('datetime64[ns]')
+A = pd.to_datetime(df['date_added'])  # 추천
+
+( 5 회 )
+중요!
+[12] : groupby("Group_name")["COLOMNS"].mean().max()
+[13] : df['BMI'] = df['weight(kg)']/(df['height(M)'] ** 2) :: ** n ( n 제곱 )
+[14] :
+문제 : 순유입인원은 초중고 도내,도외 전입인원에서 초중고 도내, 도외 전출인원을 뺀값이다. 각년도별로 가장 큰 순유입인원을 가진 지역구의 순유입인원을 구하고 전체 기간의 해당 순유입인원들의 합을 구하여라
+df['순유입인원'] = (df.loc[:,df.columns.str.contains("전입")]).sum(axis=1) - (df.loc[:,df.columns.str.contains("전출")]).sum(axis=1)
+print(df['순유입인원'].head(5))
+# 년도는 groupby 거중에서 [순유입인원].max() 의 모든 합
+result = (df.groupby('년도')['순유입인원'].max()).sum()
+
+(6회)
+[15] : 소방서별 [출동시간 - 신고시간]의 평균을 구해, 가장 큰 값을 찾고 그 값을 반올림하여 분 단위로 도출하시오.
+df['출동시간-신고시간'] = df['출동시간'].astype('datetime64[ns]') - df['신고시간'].astype('datetime64[ns]')
+answer_mean = df.groupby('소방서명')['출동시간-신고시간'].mean().max()
+answer_mean
+print(answer_mean.seconds) # 154
+print(answer_mean.total_seconds()) # 154.285714
+# / 60 하면 분단위로 변환시킨다.
+[16]
+df2 = df.groupby('학교명')[['학생수', '교사수']].sum().reset_index()
+
+[17]
+중요! =
+# 교사한명당학생수의 최대값을 찾음
+max_value = temp_df['교사한명당학생수'].max()
+
+# 최대값을 가지는 인덱스를 찾음
+max_index = temp_df['교사한명당학생수'].idxmax()
+
+# 원래 DataFrame에서 해당 인덱스 번호를 찾음
+index_number = temp_df.index.get_loc(max_index)
+
+# 아니면 젤 편하게 이 방법도 있다.
+result2 = df2.loc[df2['교사당_학생수'].idxmax(), '교사수']
+
+
+[18] 상관계수, 최댓값, 평균값
+tmp_df = df.corr()['CLOSE'].drop(columns = 'CLOSE').abs()[:-1]
+tmp_name = tmp_df.idxmax()
+feature_31_mean = df['feature_31'].iloc[:,].mean()
+#4.807
+</body>
+</html>

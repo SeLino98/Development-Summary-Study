@@ -30,8 +30,6 @@ Name: head_size, dtype: float64
 # 대립가설 : 머리둘레평균에 대해 측정자와 태아에 상호작용 효과가 있다 (독립이 아니다, 영향을 준다)
 
 
-
-
 # 이원 분산 분석
 from statsmodels.formula.api import ols
 from statsmodels.api import OLS

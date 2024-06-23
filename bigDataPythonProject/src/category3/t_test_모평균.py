@@ -15,6 +15,9 @@ A 회사에서 판매하는 모니터는 평균 5개 보다 적은 불량화소�
 # alternative를 less로 설정한다.
 import pandas as pd
 from scipy.stats import ttest_1samp #1개의 샘플
+from scipy.stats import ttest_rel, ttest_ind
+from sklearn.tree import DecisionTreeClassifier ,DecisionTreeRegressor
+from sklearn.ensemble import RandomForestClassifier,RandomForestRegressor
 
 data = pd.read_csv('data_02/defective.csv')
 answer_a = round(data['defective_pixel'].mean(),2)
