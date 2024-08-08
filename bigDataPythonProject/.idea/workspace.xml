@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="92323079-b629-42dd-b5c7-7c2f8836f780" name="Changes" comment="이항 분류 관련한, 데이터 균형 불균형, 파생변수, 스케일러 학습">
+      <change afterPath="$PROJECT_DIR$/src/bank_number_8/financial_insight.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bank_number_8/light_gbm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bank_number_8/bigdata_analyze.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/bank_number_8/bigdata_analyze.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bank_number_8/model_financial_score.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/bank_number_8/model_financial_score.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2hS0mdK2DEFHtkkplS39RbPXB8r" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.Logit_기출문제.executor": "Run",
+    "Python.__init__.executor": "Run",
+    "Python.bigdata_analyze.executor": "Run",
+    "Python.chi_square_test.executor": "Run",
+    "Python.classification_2.executor": "Run",
+    "Python.cut_off_pratice.executor": "Run",
+    "Python.financial_insight.executor": "Run",
+    "Python.light_gbm.executor": "Run",
+    "Python.linear_regression.executor": "Run",
+    "Python.model_financial_score.executor": "Run",
+    "Python.예측값 및 신뢰구간.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Administrator/Desktop/Project/BigData/bigDataPythonProject",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-48aec45f0201-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.17011.127" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="92323079-b629-42dd-b5c7-7c2f8836f780" name="Changes" comment="" />
+      <created>1717572330562</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1717572330562</updated>
+    </task>
+    <task id="LOCAL-00001" summary="이항 분류 관련한, 데이터 균형 불균형, 파생변수, 스케일러 학습">
+      <option name="closed" value="true" />
+      <created>1717654724516</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717654724516</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="이항 분류 관련한, 데이터 균형 불균형, 파생변수, 스케일러 학습" />
+    <option name="LAST_COMMIT_MESSAGE" value="이항 분류 관련한, 데이터 균형 불균형, 파생변수, 스케일러 학습" />
+  </component>
+</project>

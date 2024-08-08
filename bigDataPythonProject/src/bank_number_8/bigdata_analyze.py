@@ -46,7 +46,7 @@ print(unique_counts)
 from sklearn.preprocessing import LabelEncoder
 ### 상관관계 분석하기
 #데이터 컬럼 사이의 상관관계를 계산해 비례함의 정도를 보인다.
-# 양의 상관관계가 클수록 비례관계, 음의 상관관계가 클수록 반비례 관계이며 0에 가까우면 서로 독립으로 볼 수 있다.
+# 양의 상관관계가 클수록 비례관계, 음의 상관관계가 클수록 반비례 관계,  0에 가까우면 서로 독립으로 볼 수 있다.
 # Initialize LabelEncoder
 label_encoder = LabelEncoder()
 train['pop_cd'] = label_encoder.fit_transform(train['pop_cd'])

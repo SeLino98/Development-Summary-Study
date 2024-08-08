@@ -8,6 +8,9 @@ from sklearn.tree import DecisionTreeRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 import matplotlib.pyplot as plt
 import shap
+
+
+
 # Load the data
 train = pd.read_csv(r"C:\Users\Administrator\Desktop\82407_KCB_financial_style_data\credit_card_data.csv")
 print(train.head())
@@ -23,13 +26,15 @@ print(train.info())
 # train['age'] = label_encoder.fit_transform(train['age'])
 
 # 예측에 필요없다고 판단되는 컬럼 값들을 버린다. 나이(avg_rat 등)에 경우 너무 상관계수가 높아서 뺌. 의미없는 데이터 또한 제거.
-# features = train.drop(columns=['avg_score', 'avg_rat', 'population', 'year', 'month', 'ages', 'city', 'pop_cd', 'sex'])
-features = train.drop(columns=['avg_score', 'avg_rat', 'population', 'year', 'month', 'ages', 'city', 'pop_cd', 'sex', 'num_usecard'])
+features = train.drop(columns=['avg_score', 'avg_rat', 'population', 'year', 'month', 'ages', 'city', 'pop_cd', 'sex','monthly_bk_loan'])
+# features = train.drop(columns=['avg_score', 'avg_rat', 'population', 'year', 'month', 'ages', 'city', 'pop_cd', 'sex', 'num_usecard'])
 # 예측 모델 y 종속 변수
 target = train['avg_score']
 
 # train과 test 셋 분할
 X_train, X_test, y_train, y_test = train_test_split(features, target, test_size=0.2, random_state=42)
+
+
 
 # StandardScaler 작업을 통해 데이터 스케일링
 scaler = StandardScaler()
@@ -52,7 +57,7 @@ for name, model in models.items():
     print(f"{name} Model - MSE: {mse}, R^2: {r2}")
 
 # 시각화
-rf_model = models['Decision Tree']
+rf_model = models['Random Forest']
 importance = rf_model.feature_importances_
 feature_names = features.columns
 indices = np.argsort(importance)
