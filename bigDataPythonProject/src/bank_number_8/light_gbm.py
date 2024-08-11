@@ -10,7 +10,7 @@ import lightgbm as lgb
 train = pd.read_csv(r"C:\Users\Administrator\Desktop\82407_KCB_financial_style_data\credit_card_data.csv")
 
 # 예측에 필요없다고 판단되는 컬럼 값들을 버린다. 나이(avg_rat 등)에 경우 너무 상관계수가 높아서 뺌. 의미없는 데이터 또한 제거.
-features = train.drop(columns=['avg_score', 'avg_rat', 'population', 'year', 'month', 'ages', 'city', 'pop_cd', 'sex','monthly_bk_loan'])
+features = train.drop(columns=['avg_score', 'avg_rat', 'population', 'year', 'month', 'ages', 'city', 'pop_cd', 'sex','monthly_cd_loan','monthly_insurance_loan'])
 # features = train.drop(columns=['avg_score', 'avg_rat', 'population', 'year', 'month', 'ages', 'city', 'pop_cd', 'sex', 'num_usecard'])
 # 예측 모델 y 종속 변수
 target = train['avg_score']
@@ -24,7 +24,7 @@ X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 
 # LightGBM 모델 생성 및 학습
-lgb_model = lgb.LGBMRegressor(n_estimators=50, random_state=42)
+lgb_model = lgb.LGBMRegressor(n_estimators=5000,learning_rate=0.3)
 lgb_model.fit(X_train, y_train)
 
 # 예측 및 평가

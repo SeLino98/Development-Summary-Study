@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92323079-b629-42dd-b5c7-7c2f8836f780" name="Changes" comment="이항 분류 관련한, 데이터 균형 불균형, 파생변수, 스케일러 학습">
-      <change afterPath="$PROJECT_DIR$/src/bank_number_8/financial_insight.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/bank_number_8/light_gbm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bank_number_8/bigdata_analyze.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/bank_number_8/bigdata_analyze.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bank_number_8/model_financial_score.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/bank_number_8/model_financial_score.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bank_number_8/light_gbm.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/bank_number_8/light_gbm.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,26 +32,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Python.Logit_기출문제.executor": "Run",
-    "Python.__init__.executor": "Run",
-    "Python.bigdata_analyze.executor": "Run",
-    "Python.chi_square_test.executor": "Run",
-    "Python.classification_2.executor": "Run",
-    "Python.cut_off_pratice.executor": "Run",
-    "Python.financial_insight.executor": "Run",
-    "Python.light_gbm.executor": "Run",
-    "Python.linear_regression.executor": "Run",
-    "Python.model_financial_score.executor": "Run",
-    "Python.예측값 및 신뢰구간.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Administrator/Desktop/Project/BigData/bigDataPythonProject",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python.Logit_기출문제.executor&quot;: &quot;Run&quot;,
+    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.bigdata_analyze.executor&quot;: &quot;Run&quot;,
+    &quot;Python.chi_square_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.classification_2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cut_off_pratice.executor&quot;: &quot;Run&quot;,
+    &quot;Python.financial_insight.executor&quot;: &quot;Run&quot;,
+    &quot;Python.light_gbm.executor&quot;: &quot;Run&quot;,
+    &quot;Python.linear_regression.executor&quot;: &quot;Run&quot;,
+    &quot;Python.model_financial_score.executor&quot;: &quot;Run&quot;,
+    &quot;Python.예측값 및 신뢰구간.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator/Desktop/Project/BigData/bigDataPythonProject&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
