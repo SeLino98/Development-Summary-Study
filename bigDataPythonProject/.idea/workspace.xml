@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="92323079-b629-42dd-b5c7-7c2f8836f780" name="Changes" comment="이항 분류 관련한, 데이터 균형 불균형, 파생변수, 스케일러 학습">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bank_number_8/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/bank_number_8/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bank_number_8/light_gbm.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/bank_number_8/light_gbm.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
