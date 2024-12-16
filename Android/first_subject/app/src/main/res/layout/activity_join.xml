@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_join_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="회원가입"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_join_back"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_arrow_back_24"
+            app:layout_constraintBottom_toBottomOf="@id/tv_join_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_join_title" />
+
+        <View
+            android:id="@+id/gray_line"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/gray"
+            app:layout_constraintTop_toBottomOf="@id/tv_join_title" />
+
+        <TextView
+            android:id="@+id/tv_essential_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp"
+            android:text="* 필수정보 입력"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gray_line" />
+
+        <TextView
+            android:id="@+id/tv_join_id"
+            style="@style/Text.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="20dp"
+            android:text="* 아이디"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_essential_input" />
+
+        <EditText
+            android:id="@+id/et_join_id"
+            android:layout_width="230dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/background_edittext"
+            android:gravity="center"
+            android:hint="영문 및 숫자 포함 15자 이내"
+            android:maxLength="15"
+            app:layout_constraintBottom_toBottomOf="@id/tv_join_id"
+            app:layout_constraintStart_toEndOf="@id/tv_join_id"
+            app:layout_constraintTop_toTopOf="@id/tv_join_id" />
+
+        <TextView
+            android:id="@+id/join_password"
+            style="@style/Text.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="* 비밀번호"
+            app:layout_constraintEnd_toEndOf="@id/tv_join_id"
+            app:layout_constraintTop_toBottomOf="@id/tv_join_id" />
+
+        <EditText
+            android:id="@+id/et_join_password"
+            android:layout_width="230dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/background_edittext"
+            android:gravity="center"
+            android:hint="비밀번호 입력(6~16자)"
+            android:inputType="textPassword"
+            android:maxLength="16"
+            app:layout_constraintBottom_toBottomOf="@id/join_password"
+            app:layout_constraintStart_toEndOf="@id/join_password"
+            app:layout_constraintTop_toTopOf="@id/join_password" />
+
+        <TextView
+            android:id="@+id/check_join_password"
+            style="@style/Text.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="* 비밀번호 확인"
+            android:maxLength="16"
+            app:layout_constraintEnd_toEndOf="@id/join_password"
+            app:layout_constraintTop_toBottomOf="@id/join_password" />
+
+        <EditText
+            android:id="@+id/et_join_check_password"
+            android:layout_width="230dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="30dp"
+            android:inputType="textPassword"
+            android:background="@drawable/background_edittext"
+            app:layout_constraintBottom_toBottomOf="@id/check_join_password"
+            app:layout_constraintStart_toEndOf="@id/check_join_password"
+            app:layout_constraintTop_toTopOf="@id/check_join_password" />
+
+        <TextView
+            android:id="@+id/tv_join_name"
+            style="@style/Text.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="* 이름"
+            app:layout_constraintEnd_toEndOf="@id/check_join_password"
+            app:layout_constraintTop_toBottomOf="@id/check_join_password" />
+
+        <EditText
+            android:id="@+id/et_join_name"
+            android:layout_width="230dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/background_edittext"
+            android:gravity="center"
+            android:hint="Ex) 홍길동"
+            app:layout_constraintBottom_toBottomOf="@id/tv_join_name"
+            app:layout_constraintStart_toEndOf="@id/tv_join_name"
+            app:layout_constraintTop_toTopOf="@id/tv_join_name" />
+
+        <TextView
+            android:id="@+id/tv_join_email"
+            style="@style/Text.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="* 이메일"
+            app:layout_constraintEnd_toEndOf="@id/tv_join_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_join_name" />
+
+        <EditText
+            android:id="@+id/et_join_email"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/background_edittext"
+            app:layout_constraintBottom_toBottomOf="@id/tv_join_email"
+            app:layout_constraintStart_toEndOf="@id/tv_join_email"
+            app:layout_constraintTop_toTopOf="@id/tv_join_email" />
+
+        <ImageView
+            android:id="@+id/iv_email_at"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/baseline_alternate_email_24"
+            app:layout_constraintBottom_toBottomOf="@id/et_join_email"
+            app:layout_constraintStart_toEndOf="@id/et_join_email"
+            app:layout_constraintTop_toTopOf="@id/et_join_email" />
+
+        <Spinner
+            android:id="@+id/email_spinner"
+            android:layout_width="115dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/background_spinner"
+            app:layout_constraintBottom_toBottomOf="@id/iv_email_at"
+            app:layout_constraintStart_toEndOf="@id/iv_email_at"
+            app:layout_constraintTop_toTopOf="@id/iv_email_at" />
+
+        <Button
+            android:id="@+id/btn_send_code"
+            style="@style/Text.large"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/background_edittext"
+            android:text="인증코드 발송"
+            app:backgroundTint="@null"
+            app:layout_constraintStart_toStartOf="@id/et_join_email"
+            app:layout_constraintTop_toBottomOf="@id/et_join_email" />
+
+        <EditText
+            android:id="@+id/et_secret_code"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/background_black_edittext"
+            app:layout_constraintStart_toStartOf="@id/btn_send_code"
+            app:layout_constraintTop_toBottomOf="@id/btn_send_code" />
+
+        <Button
+            android:id="@+id/btn_certification"
+            style="@style/Text.large"
+            android:layout_width="95dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/background_edit_gray"
+            android:text="인증확인"
+            android:textSize="12sp"
+            app:backgroundTint="@null"
+            app:layout_constraintStart_toEndOf="@id/et_secret_code"
+            app:layout_constraintTop_toBottomOf="@id/btn_send_code" />
+
+        <TextView
+            android:id="@+id/tv_phone_number"
+            style="@style/Text.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="* 휴대폰번호"
+            app:layout_constraintEnd_toEndOf="@id/tv_join_email"
+            app:layout_constraintTop_toBottomOf="@id/btn_certification" />
+
+        <EditText
+            android:id="@+id/et_join_phone_number"
+            android:layout_width="230dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/background_edittext"
+            android:gravity="center"
+            android:hint="- 없이 입력"
+            app:layout_constraintBottom_toBottomOf="@id/tv_phone_number"
+            app:layout_constraintStart_toEndOf="@id/tv_phone_number"
+            app:layout_constraintTop_toTopOf="@id/tv_phone_number" />
+
+        <TextView
+            android:id="@+id/tv_address"
+            style="@style/Text.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="주소"
+            app:layout_constraintEnd_toEndOf="@id/tv_phone_number"
+            app:layout_constraintTop_toBottomOf="@id/tv_phone_number" />
+
+        <EditText
+            android:id="@+id/et_address"
+            android:layout_width="230dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/background_edittext"
+            android:gravity="center"
+            android:hint="Ex) 경기도 광명시"
+            app:layout_constraintBottom_toBottomOf="@id/tv_address"
+            app:layout_constraintStart_toEndOf="@id/tv_address"
+            app:layout_constraintTop_toTopOf="@id/tv_address" />
+
+        <TextView
+            android:id="@+id/tv_address_detail"
+            style="@style/Text.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="상세주소"
+            app:layout_constraintEnd_toEndOf="@id/tv_address"
+            app:layout_constraintTop_toBottomOf="@id/tv_address" />
+
+        <EditText
+            android:id="@+id/et_address_detail"
+            android:layout_width="230dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/background_edittext"
+            android:gravity="center"
+            android:hint="하안동"
+            app:layout_constraintBottom_toBottomOf="@id/tv_address_detail"
+            app:layout_constraintStart_toEndOf="@id/tv_address_detail"
+            app:layout_constraintTop_toTopOf="@id/tv_address_detail" />
+
+        <Button
+            android:id="@+id/btn_apply_join"
+            style="@style/Text.large"
+            android:layout_width="367dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/background_edittext"
+            android:text="회원가입 신청"
+            android:textColor="@color/big_gray"
+            app:backgroundTint="@null"
+            app:layout_constraintStart_toStartOf="@id/tv_phone_number"
+            app:layout_constraintTop_toBottomOf="@id/tv_address_detail" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
